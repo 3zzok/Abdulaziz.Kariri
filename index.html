@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="عبدالعزيز قريري – أخصائي دعم فني وشبكات وتطوير تقني."/>
+  <title>Abdulaziz Kariri | الدعم الفني والشبكات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { box-sizing:border-box; scroll-behavior:smooth; font-family:'Cairo',sans-serif; }
+    html { scroll-padding-top:120px; }
+    body {
+      margin:0;
+      background-color:#000005;
+      color:#ddd;
+      line-height:1.6;
+      font-size:16px;
+    }
+    .lang-switch {
+      position:fixed;top:15px;right:20px;z-index:1001;
+    }
+    .lang-switch button {
+      background-color:#3a86ff;color:#fff;border:none;
+      padding:10px 18px;border-radius:25px;font-weight:700;
+      cursor:pointer;transition:background-color .3s;
+    }
+    .lang-switch button:hover {
+      background-color:#265dcc;
+    }
+    .site-name {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      z-index: 1002;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-bottom 0.3s ease;
+    }
+    .site-name:hover { border-bottom: 2px solid #3a86ff; }
+    nav {
+      margin-top:25px;display:flex;justify-content:center;
+      gap:24px;flex-wrap:wrap;
+    }
+    nav a {
+      background:rgba(255,255,255,0.1);
+      padding:12px 28px;border-radius:30px;
+      color:#ddd;font-weight:600;text-decoration:none;
+      transition:background-color .3s,color .3s;
+    }
+    nav a:hover { background-color:#3a86ff;color:#fff; }
+    nav a.active { background-color:#6ab0ff;color:#fff; }
+    header {
+      background:
+        linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+        url('73af23e1-c5c6-46c5-90da-90ed9cc641ef.png')
+        center/cover no-repeat;
+      height:100vh;
+      display:flex;flex-direction:column;
+      justify-content:center;align-items:center;
+      text-align:center;padding:0 20px;
+    }
+    header h1 {
+      font-size:3.8rem;margin-bottom:18px;
+      font-weight:700;color:#f0f0f0;
+      animation:fadeInDown 1s ease forwards;
+    }
+    header p {
+      font-size:1.5rem;max-width:700px;
+      color:#ccc;animation:fadeInUp 1.2s ease forwards;
+    }
+    section {
+      max-width:980px;
+      margin:140px auto;
+      padding:40px 30px;
+      background-color:#010914;
+      border-radius:14px;
+      box-shadow:0 0 25px rgba(58,134,255,0.15);
+      opacity:0;transform:translateY(50px);
+      transition:all .8s ease-in-out;
+    }
+    section.visible {
+      opacity:1;transform:translateY(0);
+    }
+    h2 {
+      font-size:2.4rem;
+      margin-bottom:30px;
+      border-bottom:3px solid #3a86ff;
+      padding-bottom:6px;
+      color:#f0f0f0;
+      display:inline-block;font-weight:700;
+    }
+    .section-with-bg {
+      display:flex;
+      flex-wrap:wrap;
+      gap:40px;
+      flex-direction:row-reverse;
+      align-items:center;
+    }
+    .section-with-bg p {
+      flex:1 1 320px;
+      font-size:1.25rem;
+      color:#ccc;
+    }
+    .section-img {
+      flex:1 1 280px;
+      max-width:320px;
+      width:100%;
+      height:auto;
+      max-height:380px;
+      border-radius:16px;
+      object-fit:cover;
+      box-shadow:0 8px 25px rgba(63,60,60,0.158);
+      align-self:flex-start;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background-color: #29293d;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      transition: all .3s ease-in-out;
+      cursor: default;
+    }
+    .service-card:hover {
+      background-color: #3a86ff;
+      color: #fff;
+      transform: translateY(-8px) scale(1.05);
+    }
+    .service-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: #3a86ff;
+      transition: transform .3s, color .3s;
+    }
+    .service-card:hover .icon {
+      color: #fff;
+      transform: rotate(8deg) scale(1.2);
+    }
+    a.button, .cv-button {
+      display:inline-block;
+      margin-top:18px;padding:14px 30px;
+      background-color:#3a86ff;color:#fff;
+      text-decoration:none;font-weight:700;
+      border-radius:8px;
+      transition:background-color .3s;
+    }
+    a.button:hover, .cv-button:hover { background-color:#265dcc; }
+    .social-icons {
+      display:flex;justify-content:center;gap:28px;
+      margin-top:28px;
+    }
+    .social-icons a { color:#3a86ff;font-size:1.8rem; }
+    @keyframes fadeInDown {
+      from{opacity:0;transform:translateY(-20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* تنسيق المشاريع */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      width: 100%;
+    }
+    .project-card {
+      background-color: #1b1b2f;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform .3s ease, background-color .3s ease;
+    }
+    .project-card:hover {
+      background-color: #3a86ff;
+      transform: translateY(-8px) scale(1.03);
+    }
+    .project-card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      color: #ccc;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .coming-soon {
+      color: #3a86ff;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width:768px) {
+      header h1 {font-size:2.8rem;}
+      header p {font-size:1.2rem;}
+      section {
+        margin:60px 15px;
+        padding:30px 15px;
+      }
+      h2 {font-size:2rem;}
+      .section-with-bg {
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+      .section-img {
+        margin-top:20px;
+        max-width:90%;
+        height:auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switch"><button onclick="switchLanguage()">English</button></div>
+  <a href="#home" class="site-name">Abdulaziz Kariri</a>
+
+  <header id="home">
+    <h1 data-ar="مرحباً، أنا عبدالعزيز" data-en="Hello, I'm Abdulaziz">مرحباً، أنا عبدالعزيز</h1>
+    <p data-ar="اهلاً بك في موقعي الشخصي هنا تجد خبرتي في الدعم الفني وتقنية المعلومات، وخدمات أقدمها لمساعدتك في حل مشكلات الحاسب وتحسين الأداء التقني يسعدني تواصلك" data-en="Welcome to my personal website! Here you'll find my expertise in IT and technical support, along with services I offer to help solve computer issues and enhance technical performance. Feel free to reach out!">اهلاً بك في موقعي الشخصي هنا تجد خبرتي في الدعم الفني وتقنية المعلومات، وخدمات أقدمها لمساعدتك في حل مشكلات الحاسب وتحسين الأداء التقني يسعدني تواصلك.
+    <nav>
+      <a href="#about" data-ar="عنّي" data-en="About">عنّي</a>
+      <a href="#Services I Provide" data-ar="الخدمات التي أقدمها" data-en="Services I Provide">الخدمات التي أقدمها</a>
+      <a href="#projects" data-ar="مشاريعي" data-en="Projects">مشاريعي</a>
+      <a href="#resume" data-ar="السيرة الذاتية" data-en="Resume">السيرة الذاتية</a>
+      <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+    </nav>
+  </header>
+
+ <section id="about">
+  <h2 data-ar="نبذة عني" data-en="About Me">نبذة عني</h2>
+  <div class="section-with-bg">
+    <p data-ar="أنا عبدالعزيز كريري، متخصص في الدعم الفني وتقنية المعلومات. أحب تعلّم كل جديد في مجالي وأسعى دائمًا لتطوير مهاراتي ومواكبة أحدث التقنيات." 
+       data-en="I’m Abdulaziz Kariri, an IT Support Specialist. I enjoy learning new technologies in my field and constantly strive to improve my skills and stay up to date.">
+      أنا عبدالعزيز كريري، متخصص في الدعم الفني وتقنية المعلومات. أحب تعلّم كل جديد في مجالي وأسعى دائمًا لتطوير مهاراتي ومواكبة أحدث التقنيات.
+    </p>
+    <img src="F2594878-2313-43B7-A0E6-10C9177F33AC.png" class="section-img" alt="نبذة عني"/>
+  </div>
+</section>
+
+
+  <section id="Services I Provide">
+    <h2 data-ar="الخدمات التي أقدمها" data-en="Services I Provide">الخدمات التي أقدمها</h2>
+    <div class="section-with-bg">
+      <div style="flex: 1 1 600px;">
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-tools icon"></i>
+            <h3 data-ar="الدعم الفني" data-en="Tech Support">الدعم الفني</h3>
+            <p data-ar="حل مشاكل الحاسب والأجهزة بكفاءة عالية." data-en="Efficient troubleshooting for computers and devices.">حل مشاكل الحاسب والأجهزة بكفاءة عالية.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-network-wired icon"></i>
+            <h3 data-ar="الشبكات" data-en="Networking">الشبكات</h3>
+            <p data-ar="تصميم وتركيب الشبكات وحل مشاكل الاتصال." data-en="Designing, installing, and troubleshooting networks and connectivity issues.">تصميم وتركيب الشبكات وحل مشاكل الاتصال.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-laptop-code icon"></i>
+            <h3 data-ar="تطوير المواقع" data-en="Web Development">تطوير المواقع</h3>
+            <p data-ar="بناء مواقع بسيطة تلبي احتياجات الشركة." data-en="Building simple websites that meet the company's needs.">بناء مواقع بسيطة تلبي احتياجات الشركة.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-fingerprint icon"></i>
+            <h3 data-ar="أجهزة البصمة" data-en="Biometric Devices">أجهزة البصمة</h3>
+            <p data-ar="تركيب وإعداد وصيانة أجهزة البصمة." data-en="Installation, setup, and maintenance of biometric devices.">تركيب وإعداد وصيانة أجهزة البصمة.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-desktop icon"></i>
+            <h3 data-ar="أنظمة التشغيل" data-en="Operating Systems">أنظمة التشغيل</h3>
+            <p data-ar="تنصيب وصيانة أنظمة التشغيل وحل الأعطال." data-en="Installing, maintaining, and troubleshooting operating systems.">تنصيب وصيانة أنظمة التشغيل وحل الأعطال.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-user-cog icon"></i>
+            <h3 data-ar="إدارة الأنظمة والمستخدمين" data-en="System & User Management">إدارة الأنظمة والمستخدمين</h3>
+            <p data-ar="إعداد حسابات المستخدمين، تنظيم الصلاحيات، وربطها بالأنظمة الداخلية." data-en="Setting up user accounts, managing permissions, and integrating with internal systems.">إعداد حسابات المستخدمين، تنظيم الصلاحيات، وربطها بالأنظمة الداخلية.</p>
+          </div>
+        </div>
+      </div>
+      <img src="F939A4F6-BB70-45E1-B00F-233126F650C1.png" class="section-img" alt="الخدمات"/>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 data-ar="مشاريعي" data-en="My Projects">مشاريعي</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="ChatGPT Image Jul 18, 2025, 05_55_50 PM.png" alt="مشروع 1"/>
+        <h3 data-ar="نظام متابعة إيصالات العملاء" data-en="Customer Receipt Tracking System">نظام متابعة إيصالات العملاء</h3>
+        <p data-ar="نظام عملي لتبسيط عمليات متابعة الإيصالات وتحسين سير العمل داخل الشركات" data-en="A practical system designed to simplify receipt tracking processes and improve workflow efficiency within companies."
+
+>نظام عملي لتبسيط عمليات متابعة الإيصالات وتحسين سير العمل داخل الشركات</p>
+        <a class="button" href="project1.html" target="_blank" data-ar="صور المشروع" data-en="View Project">صور المشروع</a>
+      </div>
+      <div class="project-card">
+       
+       
+        <p class="coming-soon" data-ar="قريباً" data-en="Coming Soon">قريباً</p>
+      </div>
+      <div class="project-card">
+        
+        <p class="coming-soon" data-ar="قريباً" data-en="Coming Soon">قريباً</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2 data-ar="السيرة الذاتية" data-en="Resume">السيرة الذاتية</h2>
+    <div class="section-with-bg">
+      <div style="flex:1 1 320px; text-align:right;">
+<p data-ar="للاطلاع على تفاصيل خبرتي ومهاراتي، يمكنك تحميل سيرتي الذاتية بالضغط على الزر أدناه." 
+   data-en="For detailed information about my experience and skills, you can download my resume by clicking the button below.">
+   للاطلاع على تفاصيل خبرتي ومهاراتي، يمكنك تحميل سيرتي الذاتية بالضغط على الزر أدناه.
+</p>
+<a href="CVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" target="_blank" class="button" 
+   data-ar="تحميل السيرة الذاتية" data-en="Download Resume">تحميل السيرة الذاتية</a>
+
+      </div>
+      <img src="cv.png" class="section-img" alt="السيرة الذاتية"/>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-ar="تواصل معي" data-en="Contact Me">تواصل معي</h2>
+    <div class="section-with-bg">
+      <div style="flex:1 1 320px; text-align:right;">
+        <p>📧 <a href="mailto:abdulazizmkariri@gmail.com" style="color:#fff;">abdulazizmkariri@gmail.com</a></p>
+        <p>
+          <i class="fab fa-linkedin" style="color:#3a86ff; margin-left:8px;"></i>
+          <a href="https://www.linkedin.com/in/abdulaziz-kariri-b933102b7" target="_blank" style="color:#3a86ff;font-weight:600;">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchLanguage() {
+      const btn = document.querySelector('.lang-switch button');
+      const isEnglish = btn.textContent.trim() === 'English';
+      const newLang = isEnglish ? 'en' : 'ar';
+      btn.textContent = isEnglish ? 'العربية' : 'English';
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + newLang);
+      });
+      document.documentElement.setAttribute('lang', newLang);
+      document.documentElement.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+    }
+    function revealSections() {
+      document.querySelectorAll('section').forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+  </script>
+</body>
+</html>

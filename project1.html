@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تفاصيل المشروع</title>
+<link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<style>
+  body {
+    margin: 0;
+    padding: 80px 30px 30px 30px;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom, #000005, #010914);
+    color: #ddd;
+    line-height: 1.8;
+  }
+  h1, h2 {
+    color: #f0f0f0;
+  }
+  .section {
+    background-color: #010914;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 25px rgba(58, 134, 255, 0.15);
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  .section h2 {
+    color: #3a86ff;
+    border-bottom: 2px solid #3a86ff;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .images-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .image-box {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background-color: #0a1228;
+  }
+  .image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(58, 134, 255, 0.7);
+  }
+  .image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    display: block;
+  }
+  .image-desc {
+    margin: 12px 10px 15px;
+    color: #ccc;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  .arrow {
+    font-size: 2.4rem;
+    color: #3a86ff;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .lang-switch,
+  .back-button {
+    position: fixed;
+    top: 15px;
+    z-index: 1001;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+    user-select: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 10px rgba(58, 134, 255, 0.5);
+  }
+  .lang-switch {
+    left: 20px;
+  }
+  .lang-switch:hover {
+    background-color: #265dcc;
+  }
+  .back-button {
+    right: 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .back-button:hover {
+    background-color: #265dcc;
+    text-decoration: none;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .image-box img {
+      height: 140px;
+    }
+    .back-button {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <button
+    class="lang-switch"
+    onclick="switchLanguage()"
+    aria-label="Switch Language"
+  >
+    English
+  </button>
+
+  <a
+    href="index.html#projects"
+    class="back-button"
+    data-ar="⬅ الرجوع إلى صفحة المشاريع"
+    data-en="⬅ Back to Projects"
+  >
+    ⬅ الرجوع إلى صفحة المشاريع
+  </a>
+
+  <h1
+    data-ar="تفاصيل المشروع: نظام متابعة إيصالات العملاء"
+    data-en="Project Details: Customer Receipt Tracking System"
+  >
+    تفاصيل المشروع: نظام متابعة إيصالات العملاء
+  </h1>
+
+  <div class="section">
+    <h2 data-ar="📸 صور المشروع قبل التطوير" data-en="Project Before Development">
+      📸 صور المشروع قبل التطوير
+    </h2>
+    <div class="images-wrapper">
+      <div class="image-box">
+        <img src="91399D01-51BA-419B-8476-03DEEAC4C85B.png" alt="قبل التطوير 1" />
+        <div
+          class="image-desc"
+          data-ar="النظام القديم كان عبارة عن صفحة تسجيل دخول فقط لمخزون واحد، ولا يدعم تعدد المخازن."
+          data-en="The old system was just a login page for a single inventory and didn’t support multiple warehouses.
+
+"
+        >
+         النظام القديم كان عبارة عن صفحة تسجيل دخول فقط لمخزون واحد، ولا يدعم تعدد المخازن.
+
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="BEC942CA-8EF3-437A-8D53-81599E63DD18.png" alt="قبل التطوير 2" />
+        <div
+          class="image-desc"
+          data-ar="بعد تسجيل الدخول، كانت الواجهة الرئيسية تعرض فقط خيارين: إنشاء عميل جديد، أو البحث عن عميل."
+          data-en="After logging in, the main interface showed only two options: Add a new customer or search for a customer.
+
+"
+        >
+         بعد تسجيل الدخول، كانت الواجهة الرئيسية تعرض فقط خيارين: إنشاء عميل جديد، أو البحث عن عميل.
+
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="F58CDC21-3FC4-4D76-BA03-D05607320C6F.png" alt="قبل التطوير 3" />
+        <div
+          class="image-desc"
+          data-ar="يوفّر النظام أربع طرق للبحث عن العملاء: بالاسم، أمر الشراء، التاريخ، أو عرض جميع العملاء.
+
+"
+          data-en="The system offers four ways to search for customers: by name, PO number, date, or view all."
+        >
+          يوفّر النظام أربع طرق للبحث عن العملاء: بالاسم، أمر الشراء، التاريخ، أو عرض جميع العملاء.
+
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="E3808CBE-A37D-4027-8AAC-6E10646F494C.png" alt="قبل التطوير 4" />
+        <div
+          class="image-desc"
+          data-ar="صفحة إنشاء عميل جديد تشمل الاسم، رقم PO، تاريخ التسليم، وصورة إيصال تحتوي على توقيع العميل في الفاتورة."
+          data-en="The new customer page includes name, PO number, delivery date, and a receipt image showing the customer’s signature on the invoice."
+        >
+         صفحة إنشاء عميل جديد تشمل الاسم، رقم PO، تاريخ التسليم، وصورة إيصال تحتوي على توقيع العميل في الفاتورة.
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <div class="section">
+    <h2 data-ar="🚀 صور المشروع بعد التطوير" data-en="Project After Development">
+      🚀 صور المشروع بعد التطوير
+    </h2>
+    <div class="images-wrapper">
+      <div class="image-box">
+        <img src="{FB7C9B91-2A77-4892-A29E-CB807D338137}.png" alt="بعد التطوير 1" />
+        <div
+          class="image-desc"
+          data-ar="نظام تسجيل دخول متعدد حسابات لفروع الشركة، وكل مستخدم يتم إنشاء حساب خاص له "
+          data-en="Multi-account login system for company branches, with each user having a dedicated account created by me."
+        >
+          نظام تسجيل دخول متعدد حسابات لفروع الشركة، وكل مستخدم يتم إنشاء حساب خاص له 
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="2.png" alt="بعد التطوير 2" />
+        <div
+          class="image-desc"
+          data-ar="واجهة مستخدم حديثة بعد تسجيل الدخول، تحتوي على خدمات متعددة مثل إنشاء عميل جديد وتصدير ملف Excel. سيتم شرح خاصية التصدير في الخطوات القادمة مع تحديث بعض المسميات والعناوين."
+          data-en="A modern user interface after login, featuring multiple services such as creating a new client and exporting Excel files. The export feature will be explained in upcoming steps along with some updated labels and titles."
+        >
+         واجهة مستخدم حديثة بعد تسجيل الدخول، تحتوي على خدمات متعددة مثل إنشاء عميل جديد وتصدير ملف Excel. سيتم شرح خاصية التصدير في الخطوات القادمة مع تحديث بعض المسميات والعناوين.
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="3.png" alt="بعد التطوير 3" />
+        <div
+          class="image-desc"
+          data-ar="نوع البحث عن العميل مكون من خمس خيارات: اسم العميل، رقم الفاتورة، رقم أمر الشراء (PO)، التاريخ، أو المنطقة."
+          data-en="The client search includes five options: client name, invoice number, purchase order (PO) number, date, or region."
+        >
+          نوع البحث عن العميل مكون من خمس خيارات: اسم العميل، رقم الفاتورة، رقم أمر الشراء (PO)، التاريخ، أو المنطقة.
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="4.png" alt="بعد التطوير 4" />
+        <div
+          class="image-desc"
+          data-ar="صفحة إنشاء عميل تحتوي على: اسم العميل، رقم الفاتورة الخاص بالشركة، رقم أمر الشراء (PO) الخاص بالعميل، التاريخ، المنطقة، وصورة استلام متعددة الصور."
+          data-en="The client creation page includes: client name, company invoice number, client’s purchase order (PO) number, date, region, and multiple receipt images."
+        >
+          صفحة إنشاء عميل تحتوي على: اسم العميل، رقم الفاتورة الخاص بالشركة، رقم أمر الشراء (PO) الخاص بالعميل، التاريخ، المنطقة، وصورة استلام متعددة الصور.
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="5.png" alt="بعد التطوير 5" />
+        <div
+          class="image-desc"
+          data-ar="تصدير Excel بثلاث خيارات: حسب اسم العميل لاستعراض استلاماته، حسب التاريخ لعرض كل الاستلامات في ذلك اليوم، أو تصدير جميع الاستلامات لجميع العملاء."
+          data-en="Excel export has three options: by client name to view their receipts, by date to show all receipts on that day, or export all receipts for all clients."
+        >
+         تصدير Excel بثلاث خيارات: حسب اسم العميل لاستعراض استلاماته، حسب التاريخ لعرض كل الاستلامات في ذلك اليوم، أو تصدير جميع الاستلامات لجميع العملاء.
+
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="6.jpg" alt="بعد التطوير 6" />
+        <div
+          class="image-desc"
+          data-ar="بعد البحث عن العميل، يوجد ثلاث خيارات: التعديل، معاينة الاستلام، الحذف."
+          data-en="After searching for a client, there are three options: Edit, Preview Receipt, Delete."
+        >
+          بعد البحث عن العميل، يوجد ثلاث خيارات: التعديل، معاينة الاستلام، الحذف.
+
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="7.png" alt="بعد التطوير 7" />
+        <div
+          class="image-desc"
+          data-ar="بعد الضغط على زر المعاينة، تظهر خيارات: التعديل، الحذف، عرض بيانات العميل، تحميل صورة الاستلام، وزر لتحميل جميع الصور إذا كانت متعددة."
+          data-en="After clicking the preview button, options appear: edit, delete, view client details, download receipt image, and a button to download all images if multiple exist."
+        >
+          بعد الضغط على زر المعاينة، تظهر خيارات: التعديل، الحذف، عرض بيانات العميل، تحميل صورة الاستلام، وزر لتحميل جميع الصور إذا كانت متعددة.
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <div class="section">
+    <h2 data-ar="🎯 أهداف المشروع" data-en="Project Goals">🎯 أهداف المشروع</h2>
+    <p
+      data-ar="تسهيل متابعة إيصالات العملاء وتوفير الوقت وتقليل الأخطاء وتحسين سير العمل داخل الشركة."
+      data-en="Facilitate tracking customer receipts, save time, reduce errors, and improve workflow within the company."
+    >
+      تسهيل متابعة إيصالات العملاء وتوفير الوقت وتقليل الأخطاء وتحسين سير العمل داخل الشركة.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 data-ar="💡 سبب إنشاء المشروع" data-en="Reason for Creation">💡 سبب إنشاء المشروع</h2>
+    <p
+      data-ar="بسبب الصعوبات التي واجهتها الشركة في تنظيم وتتبع الإيصالات بشكل يدوي، تم إنشاء النظام لتقديم حل رقمي مخصص."
+      data-en="Due to difficulties faced by the company in manually organizing and tracking receipts, the system was created to provide a customized digital solution."
+    >
+      بسبب الصعوبات التي واجهتها الشركة في تنظيم وتتبع الإيصالات بشكل يدوي، تم إنشاء النظام لتقديم حل رقمي مخصص.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 data-ar="✅ النتيجة النهائية" data-en="Final Result">✅ النتيجة النهائية</h2>
+    <p
+      data-ar="تم تطوير النظام بنجاح باستخدام تقنيات حديثة وتم ربطه بقاعدة بيانات وذكاء اصطناعي لفرز وتحليل البيانات تلقائيًا."
+      data-en="The system was successfully developed using modern technologies and connected to a database and AI for automatic sorting and data analysis."
+    >
+      تم تطوير النظام بنجاح باستخدام تقنيات حديثة وتم ربطه بقاعدة بيانات وذكاء اصطناعي لفرز وتحليل البيانات تلقائيًا.
+    </p>
+  </div>
+
+  <script>
+    function switchLanguage() {
+      const btn = document.querySelector('.lang-switch');
+      const backBtn = document.querySelector('.back-button');
+      const isEnglish = btn.textContent.trim() === 'English';
+      const newLang = isEnglish ? 'en' : 'ar';
+
+      btn.textContent = isEnglish ? 'العربية' : 'English';
+
+      document.querySelectorAll('[data-ar]').forEach((el) => {
+        el.textContent = el.getAttribute('data-' + newLang);
+      });
+
+      backBtn.textContent = backBtn.getAttribute('data-' + newLang);
+
+      document.documentElement.setAttribute('lang', newLang);
+      document.documentElement.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+    }
+  </script>
+</body>
+</html>
