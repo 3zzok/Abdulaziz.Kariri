@@ -1,0 +1,667 @@
+
+    <!DOCTYPE html>
+    <html dir="ltr" lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Abdulaziz</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: Arial, sans-serif;
+          color: #333333;
+          background: #ffffff;
+          line-height: 1.5;
+          font-size: 13px;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        
+        .cv-container {
+          max-width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
+          background: white;
+          padding: 15mm;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          position: relative;
+        }
+        
+        .header {
+          text-align: center;
+          margin-bottom: 25px;
+          padding-bottom: 20px;
+          border-bottom: 3px solid #000000;
+          position: relative;
+        }
+        
+        .header::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50px;
+          height: 3px;
+          background: #999999;
+        }
+        
+        .profile-image {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin: 0 auto 15px;
+          object-fit: cover;
+          border: 3px solid #000000;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .name {
+          font-family: Arial, sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: #000000;
+          margin-bottom: 10px;
+          letter-spacing: -0.5px;
+        }
+        
+        .contact-info {
+          font-size: 12px;
+          color: #666666;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+          margin-top: 8px;
+        }
+        
+        .contact-info > div {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          background: #00000010;
+          padding: 3px 6px;
+          border-radius: 10px;
+          border: 1px solid #00000020;
+        }
+        
+        .section {
+          margin-bottom: 20px;
+          page-break-inside: avoid;
+        }
+        
+        .section-title {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: #000000;
+          margin-bottom: 12px;
+          padding-bottom: 5px;
+          border-bottom: 2px solid #999999;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        
+        .section-title::before {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 35px;
+          height: 2px;
+          background: #000000;
+        }
+        
+        .experience-item, .education-item, .project-item, .achievement-item, .certification-item {
+          margin-bottom: 15px;
+          padding: 12px;
+          background: #f8fafc;
+          border-radius: 6px;
+          border-left: 3px solid #999999;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+          page-break-inside: avoid;
+        }
+        
+        .item-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 6px;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        
+        .item-title {
+          font-weight: 600;
+          font-size: 14px;
+          color: #333333;
+          flex: 1;
+        }
+        
+        .item-date {
+          font-size: 11px;
+          color: #666666;
+          background: #00000015;
+          padding: 2px 6px;
+          border-radius: 10px;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+        
+        .item-company {
+          color: #666666;
+          font-weight: 500;
+          margin-bottom: 5px;
+          font-size: 13px;
+        }
+        
+        .item-description {
+          font-size: 12px;
+          text-align: justify;
+          line-height: 1.5;
+        }
+        
+        .honors {
+          background: #000000;
+          color: white;
+          padding: 4px 8px;
+          border-radius: 8px;
+          font-size: 11px;
+          font-weight: 500;
+          display: inline-block;
+          margin-top: 6px;
+        }
+        
+        .skills-section {
+          margin-bottom: 20px;
+        }
+        
+        .skills-category {
+          margin-bottom: 16px;
+          page-break-inside: avoid;
+        }
+        
+        .skills-category-title {
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: #000000;
+          margin-bottom: 8px;
+          padding: 6px 12px;
+          background: #00000010;
+          border-radius: 6px;
+          border-left: 3px solid #000000;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        
+        .skills-category-title::before {
+          content: '▶';
+          font-size: 10px;
+          color: #000000;
+        }
+        
+        .skills-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-left: 16px;
+        }
+        
+        .skill-tag {
+          background: #00000015;
+          color: #333333;
+          padding: 5px 10px;
+          border-radius: 12px;
+          font-size: 11px;
+          font-weight: 500;
+          border: 1px solid #00000025;
+        }
+        
+        .skill-tag.level-expert {
+          background: #00000030;
+          border-color: #00000040;
+          font-weight: 600;
+        }
+        
+        .skill-tag.level-advanced {
+          background: #00000025;
+          border-color: #00000035;
+        }
+        
+        .skill-tag.level-intermediate {
+          background: #00000020;
+          border-color: #00000030;
+        }
+        
+        .skill-tag.level-beginner {
+          background: #00000015;
+          border-color: #00000025;
+          opacity: 0.9;
+        }
+        
+        .summary-text {
+          font-size: 13px;
+          line-height: 1.6;
+          text-align: justify;
+          background: #00000008;
+          padding: 12px;
+          border-radius: 6px;
+          border-left: 3px solid #000000;
+        }
+        
+        .languages-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 10px;
+        }
+        
+        .language-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 10px;
+          background: #00000010;
+          border-radius: 5px;
+          border: 1px solid #00000020;
+        }
+        
+        .language-name {
+          font-weight: 500;
+          font-size: 12px;
+        }
+        
+        .language-level {
+          font-size: 10px;
+          background: #000000;
+          color: white;
+          padding: 2px 5px;
+          border-radius: 6px;
+          font-weight: 500;
+        }
+        
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 12px;
+        }
+        
+        .project-link {
+          color: #000000;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 11px;
+          margin-top: 4px;
+          display: inline-block;
+        }
+        
+        .technologies {
+          background: #66666615;
+          padding: 3px 6px;
+          border-radius: 10px;
+          font-size: 10px;
+          color: #666666;
+          margin-top: 4px;
+          display: inline-block;
+        }
+        
+        @media print {
+          body {
+            background: white;
+            font-size: 12px;
+          }
+          
+          .cv-container {
+            box-shadow: none;
+            padding: 10mm;
+            margin: 0;
+            max-width: none;
+            min-height: auto;
+          }
+          
+          .section {
+            break-inside: avoid;
+            margin-bottom: 15px;
+          }
+          
+          .skills-category {
+            break-inside: avoid;
+            margin-bottom: 12px;
+          }
+          
+          .experience-item, .education-item, .project-item, .achievement-item, .certification-item {
+            break-inside: avoid;
+            margin-bottom: 12px;
+            padding: 10px;
+          }
+          
+          .header {
+            margin-bottom: 20px;
+          }
+          
+          .name {
+            font-size: 20px;
+          }
+          
+          .section-title {
+            font-size: 14px;
+          }
+          
+          .profile-image {
+            width: 70px;
+            height: 70px;
+          }
+        }
+        
+        @media screen and (max-width: 768px) {
+          .cv-container {
+            padding: 10px;
+            margin: 5px;
+          }
+          
+          .contact-info {
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+          }
+          
+          .item-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          
+          .projects-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .languages-container {
+            grid-template-columns: 1fr;
+          }
+          
+          .skills-container {
+            margin-left: 8px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="cv-container">
+        <div class="header">
+          
+          <div class="name">Abdulaziz Kariri</div>
+          <div class="contact-info">
+            <div>✉️ abdulazizmkariri@gmail.com</div>
+            <div>📞 0547548578</div>
+            <div>📍 Riyadh</div>
+            <div>💼 www.linkedin.com/in/abdulaziz-kariri-b933102b7</div>
+            <div>🌐 https://3zzok.github.io/Abdulaziz.Kariri/</div>
+          </div>
+        </div>
+
+        
+          <div class="section">
+            <div class="section-title">📋 Professional Summary</div>
+            <div class="summary-text">I am an IT Support Specialist with over 2 years of hands-on experience in diagnosing and resolving hardware and software issues. I am proficient in system and network fundamentals, and I have knowledge of modern technologies and software tools. I always focus on enhancing my skills and contributing effectively to company goals and technical performance.
+</div>
+          </div>
+        
+
+        
+          <div class="section">
+            <div class="section-title">💼 Work Experience</div>
+            
+              <div class="experience-item">
+                <div class="item-header">
+                  <div class="item-title">Public Relations Specialist</div>
+                  <div class="item-date">July 2024 - Present</div>
+                </div>
+                <div class="item-company">First Tire • Riyadh</div>
+                <div class="item-description">Coordinated with government entities to obtain required data
+
+Entered and managed information using Microsoft Office programs
+
+Installed and maintained devices across company branches
+
+Diagnosed hardware and software problems and provided solutions
+
+Configured printers and provided customer service and quotations
+
+
+
+</div>
+              </div>
+            
+              <div class="experience-item">
+                <div class="item-header">
+                  <div class="item-title">Cooperative training</div>
+                  <div class="item-date">March 2024 - May 2025</div>
+                </div>
+                <div class="item-company">Prince Sattam bin Abdulaziz University • Al-Kharj Governorate</div>
+                <div class="item-description">Learned how to set up and configure ZKTeco biometric fingerprint devices. 
+
+Gained familiarity with BioTime software for managing and monitoring fingerprint systems.
+
+Diagnosed and troubleshot issues related to biometric devices.
+
+Installed and configured printers to ensure proper integration with systems.
+
+Configured and assigned IP addresses for biometric devices and ensured network connectivity.
+
+Monitored the performance and operational status of various devices.
+
+Installed RAM on one of the devices to enhance system performance.
+
+</div>
+              </div>
+            
+          </div>
+        
+
+        
+          <div class="section">
+            <div class="section-title">🎓 Education</div>
+            
+              <div class="education-item">
+                <div class="item-header">
+                  <div class="item-title">Diploma in Computer Technical Support</div>
+                  <div class="item-date">January 2022 - June 2024</div>
+                </div>
+                <div class="item-company"> (TVTC), Saudi Arabia</div>
+                <div class="item-description">GPA: 4.82</div>
+                
+                <div class="item-description">Graduated with First-Class Honors🎖</div>
+              </div>
+            
+          </div>
+        
+
+        
+          <div class="section skills-section">
+            <div class="section-title">⚡ Skills</div>
+            
+              <div class="skills-category">
+                <div class="skills-category-title">Engineering</div>
+                <div class="skills-container">
+                  
+                    <span class="skill-tag level-expert">Diagnose and repair computer hardware problems</span>
+                  
+                    <span class="skill-tag level-expert">Computer assembly and maintenance</span>
+                  
+                    <span class="skill-tag level-expert">Repairing and replacing hardware components (RAM, HDD, Power Supply, etc.)</span>
+                  
+                    <span class="skill-tag level-advanced">Performing regular cleaning and preventive maintenance</span>
+                  
+                </div>
+              </div>
+            
+              <div class="skills-category">
+                <div class="skills-category-title">Programming</div>
+                <div class="skills-container">
+                  
+                    <span class="skill-tag level-expert">Installing and configuring software and applications</span>
+                  
+                    <span class="skill-tag level-expert">Connecting and configuring devices in networks</span>
+                  
+                    <span class="skill-tag level-advanced">Create websites</span>
+                  
+                    <span class="skill-tag level-advanced">Integrating websites with AI technologies</span>
+                  
+                    <span class="skill-tag level-intermediate">Installing and configuring operating systems (Windows, Linux)</span>
+                  
+                </div>
+              </div>
+            
+              <div class="skills-category">
+                <div class="skills-category-title">Administration</div>
+                <div class="skills-container">
+                  
+                    <span class="skill-tag level-advanced">Managing Active Directory</span>
+                  
+                    <span class="skill-tag level-advanced">Setting up user accounts and operating systems</span>
+                  
+                </div>
+              </div>
+            
+              <div class="skills-category">
+                <div class="skills-category-title">General</div>
+                <div class="skills-container">
+                  
+                    <span class="skill-tag level-expert">Fast learner and adaptable to new environments</span>
+                  
+                    <span class="skill-tag level-expert">Clear communication and technical support for team members</span>
+                  
+                    <span class="skill-tag level-advanced">Project planning and implementation</span>
+                  
+                </div>
+              </div>
+            
+          </div>
+        
+
+        
+          <div class="section">
+            <div class="section-title">🏅 Certifications</div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">Technical Skills for Future Jobs </div>
+                  <div class="item-date">September 2024</div>
+                </div>
+                <div class="item-company"> Human Resources Development</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">Learn Computer Basics</div>
+                  <div class="item-date">September 2024</div>
+                </div>
+                <div class="item-company"> Human Resources Development</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">Network Security Essentials</div>
+                  <div class="item-date">May 2024</div>
+                </div>
+                <div class="item-company">Cisco Networking Academy</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">Cybersecurity Essentials</div>
+                  <div class="item-date">April 2023</div>
+                </div>
+                <div class="item-company">Cisco Networking Academy</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">CCNA v7: Switching, Routing, and Wireless Essentials</div>
+                  <div class="item-date">February 2023</div>
+                </div>
+                <div class="item-company">Cisco Networking Academy</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">CCNA v7: Introduction to Networks </div>
+                  <div class="item-date">January 2023</div>
+                </div>
+                <div class="item-company">Cisco Networking Academy</div>
+                
+                
+              </div>
+            
+              <div class="certification-item">
+                <div class="item-header">
+                  <div class="item-title">PC Assembly and Maintenance</div>
+                  <div class="item-date">March 2022</div>
+                </div>
+                <div class="item-company">Cisco Networking Academy</div>
+                
+                
+              </div>
+            
+          </div>
+        
+
+        
+
+        
+          <div class="section">
+            <div class="section-title">🏆 Achievements</div>
+            
+              <div class="achievement-item">
+                <div class="item-header">
+                  <div class="item-title">An integrated web system was developed to track customer receipts</div>
+                  <div class="item-date">June 2025</div>
+                </div>
+                <div class="item-description">Successfully designed and developed a custom client-tracking web application for a company, integrating it with AI and connecting it to a database based on specific business needs.
+
+</div>
+              </div>
+            
+          </div>
+        
+
+        
+          <div class="section">
+            <div class="section-title">🌍 Languages</div>
+            <div class="languages-container">
+              
+                <div class="language-item">
+                  <span class="language-name">Arabic</span>
+                  <span class="language-level">Native</span>
+                </div>
+              
+                <div class="language-item">
+                  <span class="language-name">English</span>
+                  <span class="language-level">Intermediate</span>
+                </div>
+              
+            </div>
+          </div>
+        
+      </div>
+    </body>
+    </html>
+  
